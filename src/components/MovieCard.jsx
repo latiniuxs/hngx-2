@@ -16,16 +16,15 @@ const MovieCard = ({ movie }) => {
     const localDate = new Date(release_date);
     const year = localDate.getUTCFullYear();
     const month = (localDate.getUTCMonth() + 1).toString().padStart(2, "0");
-    const day = localDate.getUTCDate().toString().padStart(2, "0"); // Add parentheses to padStart
+    const day = localDate.getUTCDate().toString().padStart(2, "0");
     return `${year}-${month}-${day}`;
   };
-  
-  console.log(utcReleaseYear);
 
   return (
-    <Link to={`/movies/${id}`} data-testid="movie-card">
-      <div className="relative bg-white rounded-lg shadow-lg cursor-pointer mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-        <div className=" h-96 relative">
+    <Link to={`/movies/${id}`}>
+    <div  data-testid="movie-card">
+    <div className="bg-white rounded-lg shadow-lg border border-gray-300 hover:shadow-xl hover:border-gray-400 cursor-pointer mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+        <div className="h-96 relative">
           <img
             src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
             alt={title}
@@ -56,6 +55,8 @@ const MovieCard = ({ movie }) => {
           </h2>
         </div>
       </div>
+    </div>
+      
     </Link>
   );
 };

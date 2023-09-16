@@ -38,7 +38,7 @@ const MovieDetails = ({
     const localDate = new Date(release_date);
     const year = localDate.getUTCFullYear();
     const month = (localDate.getUTCMonth() + 1).toString().padStart(2, "0");
-    const day = localDate.getUTCDate().toString().padStart(2, "0"); // Add parentheses to padStart
+    const day = localDate.getUTCDate().toString().padStart(2, "0");
     return `${year}-${month}-${day}`;
   };
   
