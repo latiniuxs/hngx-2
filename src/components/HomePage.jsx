@@ -65,7 +65,7 @@ const HomePage = ({ isError, errorMessage, setIsError, setErrorMessage }) => {
             {isLoading ? (
               <Loading /> // Display loading page while fetching data
             ) : (
-              <div  data-testid="movie-card" className="grid lg:grid-cols-4 md:gap-10 md:grid-cols-3 sm:gap-5 sm:grid-cols-2 px-5 lg:mx-3 lg:gap-12">
+              <div className="grid lg:grid-cols-4 md:gap-10 md:grid-cols-3 sm:gap-5 sm:grid-cols-2 px-5 lg:mx-3 lg:gap-12">
                 {topMovies &&
                   topMovies
                     .filter((movie) => movie.poster_path !== null)

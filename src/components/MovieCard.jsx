@@ -21,14 +21,15 @@ const MovieCard = ({ movie }) => {
   };
 
   return (
+    <div data-testid="movie-card">
       <Link to={`/movies/${id}`}>
         <div className="bg-white rounded-lg shadow-lg border border-gray-300 hover:shadow-xl hover:border-gray-400 cursor-pointer mb-4 sm:mb-6 md:mb-8 lg:mb-10">
           <div className="h-96 relative">
             <img
-              data-testid="movie-poster"
               src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
               alt={title}
               className="w-full h-full object-cover rounded-t-lg"
+              data-testid="movie-poster"
             />
             <div className="absolute top-2 right-2">
               <img
@@ -41,20 +42,21 @@ const MovieCard = ({ movie }) => {
           </div>
           <div className="p-4">
             <p
-              data-testid="movie-release-date"
               className="text-gray-600 text-sm truncate"
+              data-testid="movie-release-date"
             >
               {utcReleaseYear(release_date)}
             </p>
             <h2
-              data-testid="movie-title"
               className="text-lg font-semibold truncate"
+              data-testid="movie-title"
             >
               {title}
             </h2>
           </div>
         </div>
       </Link>
+    </div>
   );
 };
 
